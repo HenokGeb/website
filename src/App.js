@@ -1,12 +1,16 @@
 import './App.css';
-import HomePage from "./Components/HomePage";
-import EmployeePage from './Components/EmployeePage';
-import Wrapper from './Components/Wrapper';
+//import HomePage from "./Components/HomePage";
+//import EmployeePage from './Components/EmployeePage';
+//import Wrapper from './Components/Wrapper';
 import imageOne from "./assets/Images/Image_one.jpeg";
-import imageTwo from "./assets/Images/Image_two.jpeg";
-import imageThree from "./assets/Images/Image_three.jpeg";
+//import imageTwo from "./assets/Images/Image_two.jpeg";
+//import imageThree from "./assets/Images/Image_three.jpeg";
 import React, {useState, useEffect} from "react";
 import Form from "./Components/Form";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Employees from './Components/Employees';
+import NavBar from './Components/NavBar';
+import Home from './Components/Home';
 
 
 
@@ -64,15 +68,19 @@ const [employeeDetail, setEmployeeDetail] = useState(
     },
 )
 return (
+  <BrowserRouter>
+  <NavBar />
     <div className='container'>
-          
-          <Form />
-          <Wrapper>
-          <HomePage setEmployeeDetail={setEmployeeDetail} employees = {employees} />
-          <EmployeePage employeeDetail= {employeeDetail} employees = {employees} />
-          </Wrapper>
-        
+     <Routes>
+       <Route path ="/" element = {<Home />} />
+       <Route path = "/add-employees" element = {<Form />} />
+       <Route path = "/employees-list"  element = {<Employees 
+        setEmployeeDetail={setEmployeeDetail} 
+        employees = {employees} 
+        employeeDetail= {employeeDetail} />} />
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 
