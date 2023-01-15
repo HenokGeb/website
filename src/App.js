@@ -11,7 +11,8 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Employees from './Components/Employees';
 import NavBar from './Components/NavBar';
 import Home from './Components/Home';
-
+import Register from './Components/Register';
+import Login from './Components/Login';
 
 
 function App () { 
@@ -78,6 +79,8 @@ return (
         setEmployeeDetail={setEmployeeDetail} 
         employees = {employees} 
         employeeDetail= {employeeDetail} />} />
+        <Route path = "/login" element = {<Login />} />
+        <Route path = "/register" element = {<Register />} />
       </Routes>
     </div>
     </BrowserRouter>

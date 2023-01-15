@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link } from "react-router-dom"
 
 function Home() {
   return (
@@ -17,9 +18,9 @@ function Home() {
      Diam sit et lorem et est ipsum amet elitr duo. Lorem dolores est accusam stet et et consetetur ut sit, lorem accusam ipsum eirmod dolore est aliquyam nonumy gubergren, takimata sed amet consetetur et kasd lorem magna dolor rebum. Et invidunt lorem invidunt invidunt diam at. Sadipscing amet diam kasd et sit, sed lorem sea justo dolor, et kasd no diam takimata takimata ipsum dolor magna. Voluptua lorem ipsum dolor dolore et ut eos sadipscing. Et amet amet lorem et elitr. Vero justo et voluptua diam stet sed accusam justo lorem. Stet nonumy eos sit ipsum dolor no sea clita, sit est duo dolores lorem et tempor, vero rebum et no eos, rebum gubergren diam dolor et sea diam ut. Dolore et invidunt est aliquyam sadipscing labore gubergren aliquyam tempor. Amet dolor kasd labore no consetetur rebum takimata, ipsum sit ipsum consetetur invidunt diam, dolore sea amet dolore dolores. 
      </p> 
     <div style={styledContainer}>
-    <div> Login
-    </div>
-    <div>Register</div>
+    <div><Link to ="/login"> Login</Link> </div>
+    <br />
+    <div><Link to ="/register"> Register</Link></div>
     </div>
     </div>
   )
