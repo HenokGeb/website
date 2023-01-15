@@ -37,7 +37,7 @@ const handleClick = () => {
 }
   return (
     <div>
-    <div>Form to Add Employee Details</div>
+    <div style ={{textAlign: "center", fontWeight: "bold"}}>Form to Add Employee Details</div>
     <form >
     <input className="input" type ="text" value = {name} placeholder= "Name of the employee" onChange = {handleName} />
     <br/>
