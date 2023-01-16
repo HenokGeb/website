@@ -29,7 +29,7 @@ function Form () {
     }
   return (
     <div>
-    <div style ={{textAlign: "center", fontWeight: "bold"}}>Add Employee Details</div>
+    <div style ={{textAlign: "center", fontWeight: "bold", color: "blue"}}>Add Employee Details</div>
     <form style ={{backgroundColor: "lightblue"}}onSubmit={handleSubmit}>
     <input className="input" type ="text" name = "name" placeholder= "Name of the employee" onChange = {handleChange} />
     <br/>

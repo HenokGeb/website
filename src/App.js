@@ -70,8 +70,8 @@ const [employeeDetail, setEmployeeDetail] = useState(
 )
 return (
   <BrowserRouter>
-  <NavBar />
     <div className='container'>
+    <NavBar />
      <Routes>
        <Route path ="/" element = {<Home />} />
        <Route path = "/add-employees" element = {<Form />} />

@@ -22,7 +22,7 @@ function Login () {
     return ( 
         <div>
         <h3> Welcome to the Login Page</h3>
-        <fieldset style = {{ border: "solid blue 1px", textAlign: "center"}}>
+        <fieldset style = {{ border: "solid blue 1px", textAlign: "center", backgroundColor: "#607D8B"}}>
         <form onCreateAccount={handleSubmit} >
         <div style ={{ margin: "5px"}}> User Name <input style ={{border: "2px solid", borderRadius: "3px", padding: "5px", margin: "10px"}} onChange = {handleChange}/>
         </div>

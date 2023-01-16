@@ -18,8 +18,10 @@ function NavBar() {
 const styledNav = {
     width: "100%",
     display: "flex",
-    height:"5vh",
-    backgroundColor:"grey",
+   // height:"10vh",
+    backgroundColor:"#009688",
+    //position: "fixed",
+
 
 }
 const styledUl = {
@@ -27,10 +29,12 @@ const styledUl = {
     gap: "10px",
     listStyleType: "none",
     margin: "0",
-    padding: "0",
+    padding: "30px",
+   
 
 }
 const styledLi = {
+    color: "", 
 
 
 }
