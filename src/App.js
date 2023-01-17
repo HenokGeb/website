@@ -57,18 +57,19 @@ useEffect(() => {
   });
 
 }, []);
-const [employeeDetail, setEmployeeDetail] = useState(
-  {
-    id: 1,
-    image: imageOne,
-    name: "John Doe",
-    occupation: " Front End Developer",
-    callMobile: "Mobile: + 364387439749",
-    SMS: "SMS: 617-9999 0002",
-    emailAddress: "Email: JohnDoe@gmail.com",
-    },
-)
+
+const [employeeDetail, setEmployeeDetail] = useState({
+  id: 1,
+  image: imageOne,
+  name: "John Doe",
+  occupation: " Front End Developer",
+  callMobile: "Mobile: + 364387439749",
+  SMS: "SMS: 617-9999 0002",
+  emailAddress: "Email: JohnDoe@gmail.com",
+})
+
 return (
+  
   <BrowserRouter>
     <div className='container'>
     <NavBar />

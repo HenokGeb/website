@@ -1,8 +1,10 @@
 import React from 'react'
 
 const Wrapper = (props) => {
-  return  <div style={StyledWrapper}>{props.children}</div>
-};
+  return  (
+    
+  <div style={StyledWrapper}>{props.children}</div>
+)};
 
 const StyledWrapper ={
     maxWidth: "800px",

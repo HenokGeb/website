@@ -10,9 +10,8 @@ function NavBar() {
     <li style= {styledLi} ><Link to ="/add-employees"> Add Employees</Link></li>
     <li style= {styledLi} ><Link to ="/employees-list"> Employees List</Link></li>
     </ul>
-    
     </div>
-  )
+ )
 }
 
 const styledNav = {
