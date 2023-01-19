@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <div style = {styledNav}>
     <ul style = {styledUl}>
-    <li style = {styledLi}><Link to ="/"> Home </Link> </li>
+    <li style = {styledLi}><Link to ="/website"> Home </Link> </li>
     <li style= {styledLi} ><Link to ="/add-employees"> Add Employees</Link></li>
     <li style= {styledLi} ><Link to ="/employees-list"> Employees List</Link></li>
     </ul>
