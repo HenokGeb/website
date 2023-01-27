@@ -1,12 +1,17 @@
 import React from 'react';
+import {useContext} from "react";
+import {EmployeeContext} from "../EmployeeContext";
 
-const EmployeeListItem = ({employees, setEmployeeDetail}) => {
-  return (
+const EmployeeListItem = () => {
+  const {employees, setEmployeeDetail} = useContext(EmployeeContext)
+  
+return (
     employees.map(({image, name, occupation}, index) => {
       const handleEmployeeDetail = ()=> {
         setEmployeeDetail(employees[index])
       }
-      return (
+
+return (
     <div 
     key={index} 
     style = {StyledEmployeeListItem} 
@@ -20,6 +25,7 @@ const EmployeeListItem = ({employees, setEmployeeDetail}) => {
  )})
   )
   };
+
 const StyledImage = {
   width: "100px",
   height: "100px",

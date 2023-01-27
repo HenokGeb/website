@@ -1,12 +1,15 @@
 import React from 'react'
 import EmployeeDetail from './EmployeeDetail';
 import Header from './Header';
+//import { useContext } from "react"
+//import EmployeeContext from "../EmployeeContext"
 
-const EmployeePage = ({employees, employeeDetail}) => {
+const EmployeePage = () => {
+  //const { employees, employeeDetail} = useContext(EmployeeContext)
   return (
     <div style= {StyledEmployeePage}>
         <Header title = "Employee"/>
-        <EmployeeDetail employeeDetail={employeeDetail} employees = {employees}/>
+        <EmployeeDetail/>
     </div>
   )
 };

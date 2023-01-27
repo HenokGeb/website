@@ -2,14 +2,17 @@ import React from 'react'
 import Wrapper from './Wrapper'
 import HomePage from './HomePage'
 import EmployeePage from './EmployeePage'
+//import { useContext } from "react"
+//import EmployeeContext from "../EmployeeContext"
 
 
-function Employees(props) {
+function Employees() {
+  //const {employees, setEmployeeDetail} = useContext(EmployeeContext)
   return (
     <div>
     <Wrapper>
-    <HomePage setEmployeeDetail= {props.setEmployeeDetail} employees = {props.employees} />
-    <EmployeePage employeeDetail= {props.employeeDetail} employees = {props.employees} />
+    <HomePage />
+    <EmployeePage/>
     </Wrapper>
     </div>
   )

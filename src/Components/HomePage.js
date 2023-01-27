@@ -4,12 +4,12 @@ import SearchBar from './SearchBar';
 import EmployeeList from './EmployeeList';
 
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
     <div style = {StyledHomePage}>
         <Header title="Employees' Directory"/>
         <SearchBar />
-        <EmployeeList setEmployeeDetail={props.setEmployeeDetail} employees={props.employees}/>
+        <EmployeeList />
     </div>
   )
 };

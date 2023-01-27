@@ -5,7 +5,7 @@ const EmployeeList = (props) => {
   return (
     <div style = {StyledContent}>
 
-        <EmployeeListItem setEmployeeDetail={props.setEmployeeDetail} employees={props.employees} />
+        <EmployeeListItem />
 
     </div>
   )
