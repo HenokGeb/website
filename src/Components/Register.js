@@ -28,8 +28,8 @@ function Register () {
       }
     return (
       <div>
-      <div style ={{textAlign: "center", fontWeight: "bold"}}>Create Account</div>
-      <form style ={{backgroundColor: "brown"}}onCreateAccount={handleSubmit}>
+      <div>Create Account</div>
+      <form onCreateAccount={handleSubmit}>
       <input className="input" type ="text" name = "name" placeholder= "Name of the account holder" onChange = {handleChange} />
       <br/>
       <input className="input" type ="text" name = "occupation" placeholder= "Occupation" onChange = {handleChange} />
