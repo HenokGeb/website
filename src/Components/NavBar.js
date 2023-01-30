@@ -6,9 +6,9 @@ function NavBar() {
   return (
     <div style = {styledNav}>
     <ul style = {styledUl}>
-    <li style = {styledLi}><Link to ="/website"> Home </Link> </li>
-    <li style= {styledLi} ><Link to ="/add-employees"> Add Employees</Link></li>
-    <li style= {styledLi} ><Link to ="/employees-list"> Employees List</Link></li>
+    <li><Link to ="/website"> Home </Link> </li>
+    <li ><Link to ="/add-employees"> Add Employees</Link></li>
+    <li ><Link to ="/employees-list"> Employees List</Link></li>
     </ul>
     </div>
  )
@@ -29,12 +29,9 @@ const styledUl = {
     listStyleType: "none",
     margin: "0",
     padding: "30px",
+    textDecoration: "none",
+    
    
-
-}
-const styledLi = {
-    color: "", 
-
 
 }
 

@@ -34,7 +34,7 @@ const styledContainer= {
     //color: "white",
     //textDecoration: "none",
     margin: "50px",
-    display: "flex"
+    display: "flex",
   
 
 }

@@ -16,6 +16,7 @@ import Login from './Components/Login';
 import { EmployeeProvider}  from "./EmployeeContext"
 //import EmployeeContext from "./EmployeeContext"
 //import {useState} from "react";
+import Footer from './Components/Footer';
 
 
 function App () { 
@@ -86,6 +87,7 @@ return (
         <Route path = "/login" element = {<Login />} />
         <Route path = "/register" element = {<Register />} />
       </Routes>
+      <Footer />
     </div>
     </BrowserRouter>
     </EmployeeProvider>
