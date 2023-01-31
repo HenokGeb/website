@@ -28,8 +28,8 @@ function Register () {
       }
     return (
       <div>
-      <div>Create Account</div>
-      <form onCreateAccount={handleSubmit}>
+      <div style = {{backgroundColor: "#BBDEFB", color: "black", marginTop: "50px", fontWeight: "bold"}}>Create Account</div>
+      <form style = {{backgroundColor: "#BBDEFB"}} onCreateAccount={handleSubmit}>
       <input className="input" type ="text" name = "name" placeholder= "Name of the account holder" onChange = {handleChange} />
       <br/>
       <input className="input" type ="text" name = "occupation" placeholder= "Occupation" onChange = {handleChange} />
@@ -40,7 +40,7 @@ function Register () {
       <br/>
       <input className="input" type ="password" name = "password" placeholder= "strong password" onChange = {handleChange} />
       <input className="input" type ="text" name = "username" placeholder= "user name" onChange = {handleChange} />
-      <button className="input" style= {{ backgroundColor: 'blue', color: 'white'}}>Create Account</button>
+      <button className="input" style= {{ backgroundColor: 'black', fontWeight: "bold", color: 'white'}}>Create Account</button>
       </form>
       </div>
     )

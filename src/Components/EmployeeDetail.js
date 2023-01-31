@@ -19,10 +19,12 @@ const { employeeDetail} = useContext(EmployeeContext);
 };
 
 const StyledEmployeeDetail = {
-  disply: "flex",
+  //disply: "flex",
   //gap: "100px",
   padding: "100px",
   //alignItem: "center",
+  backgroundColor: "#fff",
+  
 
 
 };

@@ -11,7 +11,8 @@ const EmployeeList = (props) => {
   )
 };
 const StyledContent = {
-  padding: "50px 5px 30px 5px",
+  padding: "5px",
+  //backgroundColor: "#42A5F5",
 }
 
 export default EmployeeList;

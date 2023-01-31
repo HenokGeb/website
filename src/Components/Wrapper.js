@@ -7,13 +7,13 @@ const Wrapper = (props) => {
 )};
 
 const StyledWrapper ={
-    maxWidth: "800px",
-    margin: " 40px auto",
-    backgroundColor:"#fff",
-    display: "flex",
-    gap: "3px",
-    border:"1px solid black",
-    borderRadius: "10px"
+    //maxWidth: "800px",
+    //margin: " 40px auto",
+    //backgroundColor: "#fff",
+    //display: "flex",
+    //gap: "3px",
+    //border:"1px solid black",
+    //borderRadius: "10px"
     
 };
 

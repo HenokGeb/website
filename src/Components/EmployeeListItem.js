@@ -30,7 +30,7 @@ const StyledImage = {
   width: "100px",
   height: "100px",
   borderRadius: "50%",
-  backgroundColor: "#80DEEA",
+  //backgroundColor: "#80DEEA",
   margin: "10px",
  
 
@@ -38,10 +38,14 @@ const StyledImage = {
 const StyledEmployeeListItem = {
   display: "flex",
   //gap: "10px",
-  margin: "20px",
+  margin: "5px 0",
+  backgroundColor: "white",
+  border: "solid 0.25px black",
+  borderRadius: "5px"
 };
 const StyleContent = {
-  margin: "30px 5px",
+  //fonttWeight: "bold"
+  //margin: "30px 5px",
 };
 
 export default EmployeeListItem

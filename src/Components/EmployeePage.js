@@ -15,7 +15,7 @@ const EmployeePage = () => {
 };
 const StyledEmployeePage = {
   width: "50%",
-  backgroundColor: "#80DEEA",
+  //backgroundColor: "#42A5F5",
   fontWeight: "bold",
   border: "black solid 0.25px",
   borderRadius: "10px",

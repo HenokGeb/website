@@ -29,8 +29,8 @@ function Form () {
     }
   return (
     <div>
-    <div style ={{textAlign: "center", fontWeight: "bold", color: "blue"}}>Add Employee Details</div>
-    <form style ={{backgroundColor: "lightblue"}}onSubmit={handleSubmit}>
+    <div style ={{textAlign: "center", fontWeight: "bold", color: "blue", margin: "20px"}}>Add Employee Details</div>
+    <form style ={{backgroundColor: "#fff", textAlign: "center"}}onSubmit={handleSubmit}>
     <input className="input" type ="text" name = "name" placeholder= "Name of the employee" onChange = {handleChange} />
     <br/>
     <input className="input"type ="text" name = "imageUrl" placeholder= "Image url" onChange = {handleChange} />
@@ -45,7 +45,7 @@ function Form () {
     <br/>
     <input className="input" type ="text" name = "emailAddress" placeholder= "Email Address" onChange = {handleChange} />
     <br/>
-    <button className="input" style= {{ backgroundColor: 'blue', color: 'white'}}>Submit</button>
+    <button className="input" style= {{ backgroundColor: 'black', fontWeight: "bold", color: 'white'}}>Submit</button>
     </form>
     </div>
   )

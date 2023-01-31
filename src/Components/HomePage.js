@@ -15,10 +15,10 @@ const HomePage = () => {
 };
 const StyledHomePage = {
   width: "50%",
-  backgroundColor: "#80DEEA",
-  padding: "10px 0",
-  border: " solid 0.25px black",
-  borderRadius: "10px",
+  backgroundColor: "#fff",
+  //padding: "10px 0",
+  //border: " solid 0.25px black",
+  //borderRadius: "10px",
 }
 
 export default HomePage;
