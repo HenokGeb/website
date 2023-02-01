@@ -25,7 +25,7 @@ const handleChange = (event) => {
 
  const handleSearch = () => {
   const searchedValue = employees.filter((employee) => {
-    return searchValue === employee.name; 
+    return searchValue.toLowerCase() === employee.name.toLowerCase(); 
   })
     setEmployees(searchedValue);
     setEmployeeDetail(searchedValue[0])
