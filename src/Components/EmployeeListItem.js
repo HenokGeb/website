@@ -39,7 +39,7 @@ const StyledEmployeeListItem = {
   display: "flex",
   //gap: "10px",
   margin: "5px 0",
-  backgroundColor: "white",
+  backgroundColor: "###",
   border: "solid 0.25px black",
   borderRadius: "5px"
 };

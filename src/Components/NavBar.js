@@ -10,7 +10,7 @@ function NavBar() {
       display: "flex", 
       justifyContent: "right",
       backgroundColor: "#42A5F5",
-      height:"10vh",
+      height:"3vh",
       padding: "30px",
       textDecoration: "none",
       gap: "20px",
@@ -18,7 +18,7 @@ function NavBar() {
       fontWeight: "bold",
       
 
-    }}>
+    }}> 
     <li><Link to ="/website"> Home </Link> </li>
     <li ><Link to ="/add-employees"> Add Employees</Link></li>
     <li ><Link to ="/employees-list"> Employees List</Link></li>

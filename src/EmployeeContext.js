@@ -12,15 +12,24 @@ useEffect(() => {
   )
   .then((res) => res.json())
   .then((data) => {
-    if (data) setEmployees(data);
+    //if (data) 
+    setEmployees(data);
+    setEmployeeDetail(data[0])
   });
 
 }, []);
 
     return (
 
-        <EmployeeContext.Provider value = {{ employees, employeeDetail, setEmployeeDetail, setEmployees}} >
+        <EmployeeContext.Provider value = {{ 
+          employees, 
+          employeeDetail, 
+          setEmployeeDetail, 
+          setEmployees
+        }} >
+
         {props.children}
+        
         </EmployeeContext.Provider>
     
     );

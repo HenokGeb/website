@@ -1,7 +1,67 @@
 import React from 'react';
 import { useState } from 'react';
+import { faSearch} from "@fortawesome/free-solid-svg-icons"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import styled from "styled-components"
+import {useContext} from 'react'
+import {EmployeeContext} from '../EmployeeContext'
 
-const SearchBar = ({searchedValue}) => {
+const StyledSearch = styled.div`
+display: flex;
+align-items: center;
+`;
+const SearchBar = () => {
+const [searchValue, setSearchValue] = useState([]);
+const {employees, setEmployeeDetail, setEmployees} = useContext (EmployeeContext);
+
+const handleChange = (event) => {
+  setSearchValue(event.target.value)
+  //const searchWord= setSearchValue(event.target.value);
+  //const newFilter= employees.filter((employee) =>{
+   // return employee.name.toLowerCase().includes(searchWord.toLowerCase());
+  //});
+  //setSearchValue(newFilter);
+};
+
+ const handleSearch = () => {
+  const searchedValue = employees.filter((employee) => {
+    return searchValue === employee.name; 
+  })
+    setEmployees(searchedValue);
+    setEmployeeDetail(searchedValue[0])
+};
+/*<div>
+{searchValue.length !== 0 && (
+  <div> {searchValue.map((employee, key) => {
+    return ( <p>{employee.name}</p>)
+  })}
+  </div>
+)}
+</div> */
+
+
+  return (
+<StyledSearch>
+  <input 
+       style = {StyleSearchBar} 
+       type= "text" 
+       placeholder = "Search by name...."
+       onChange= {handleChange}
+    
+         />
+  <FontAwesomeIcon 
+    icon= {faSearch} 
+    onClick= {handleSearch} 
+    style= {{
+       cursor:"pointer",  
+       marginLeft:"-25px"
+      }} 
+      />
+    </StyledSearch>
+  );
+}
+
+/*const SearchBar = ({searchedValue}) => {
   const [searchValue, setSearchValue] = useState("")
   const handleInputChange = (event) =>{
     setSearchValue(event.target.value)
@@ -12,12 +72,13 @@ const SearchBar = ({searchedValue}) => {
   const displayButton = searchValue.length > 0
   return (
     <div>
-      <input style={StyledSearchBar} type="text" placeholder="Search Employee..." value = {searchValue} onChange ={handleInputChange}></input>
+      <input style={StyleSearchBar} type="text" placeholder="Search Employee..." value = {searchValue} onChange ={handleInputChange}></input>
       {displayButton && <button style= {{backgroundColor: "grey", color:"white", border: "1px solid white", borderRadius: "10%", }} onClick = {handleClearClick}> Clear </button>}
     
       </div> 
       );
-  };
+  }*/
+
 
  /* const employeeNames = [
     "John Doe",
@@ -51,12 +112,12 @@ const SearchBar = ({searchedValue}) => {
     }; */
 
 
-const StyledSearchBar = {
+const StyleSearchBar = {
   width: "95%",
   border:"1px solid #333",
   borderRadius: "20px",
-  padding: "5px 5px",
-  margin: "5px 0 0",
+  padding: "7px 5px",
+  margin: "2px 7px",
   
 };
 

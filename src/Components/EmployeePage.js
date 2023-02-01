@@ -19,7 +19,7 @@ const StyledEmployeePage = {
   fontWeight: "bold",
   border: "black solid 0.25px",
   borderRadius: "10px",
-  padding: "10px 0 "
+  //padding: "10px 0 "
 };
 
 export default EmployeePage;
