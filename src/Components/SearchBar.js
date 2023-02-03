@@ -122,3 +122,66 @@ const StyleSearchBar = {
 };
 
 export default SearchBar
+
+
+
+
+/*import React from 'react';
+import { useState } from 'react';
+import { faSearch} from "@fortawesome/free-solid-svg-icons"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import styled from "styled-components"
+import {useContext} from 'react'
+import {EmployeeContext} from '../EmployeeContext'
+
+const StyledSearch = styled.div`
+display: flex;
+align-items: center;
+`;
+const SearchBar = () => {
+const [searchValue, setSearchValue] = useState([]);
+const {employees, setEmployeeDetail, setEmployees} = useContext (EmployeeContext);
+const handleChange = (event) => { 
+  setSearchValue(event.target.value)
+};
+
+const handleSearch = () => {
+const searchedValue = employees.filter((employee) => {
+    return searchValue.toLowerCase() === employee.name.toLowerCase(); 
+  })
+
+    setEmployees(searchedValue);
+    setEmployeeDetail(searchedValue[0])
+};
+
+return (
+      <StyledSearch>
+          <input 
+             style = {StyleSearchBar} 
+             type= "text" 
+             placeholder = "Search by name...."
+             onChange={handleChange}
+    
+               />
+      <FontAwesomeIcon 
+             icon= {faSearch} 
+             onClick= {handleSearch} 
+              style= {{
+                 cursor:"pointer",  
+                 marginLeft:"-25px"
+             }} 
+                />
+      </StyledSearch>
+  );
+}
+
+const StyleSearchBar = {
+  width: "95%",
+  border:"1px solid #333",
+  borderRadius: "20px",
+  padding: "7px 5px",
+  margin: "2px 7px",
+  
+};
+
+export default SearchBar */

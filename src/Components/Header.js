@@ -1,17 +1,25 @@
 import React from 'react';
+import Styled from "styled-components"
+
+const StyledHeader = Styled.div`
+text-align: center;
+background-color: #fff;
+border: black solid 1px;
+border-radius: 15px;
+margin: 5px 0;
+padding: 5px;
+font-weight: bold;
+
+@media (max-width: 599px) {
+  margin-top: 0;
+  color: green;
+  padding: 2px;
+}
+`;
 
 const Header = (props) => {
-  return <div style= {StyledHeader}> {props.title} </div>
+  return <StyledHeader> {props.title} </StyledHeader>
 };
 
-const StyledHeader = {
-  textAlign: "center",
-  backgroundColor: "#fff",
-  border: "black solid 1px",
-  borderRadius: "15px",
-  margin:"5px 0",
-  padding: "5px",
-  fontWeight: "bold",
-};
 
 export default Header;
