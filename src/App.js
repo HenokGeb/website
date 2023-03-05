@@ -17,6 +17,7 @@ import { EmployeeProvider}  from "./EmployeeContext"
 //import EmployeeContext from "./EmployeeContext"
 //import {useState} from "react";
 import Footer from './Components/Footer';
+import Article from './Components/Article';
 
 
 function App () { 
@@ -86,6 +87,7 @@ return (
        <Route path = "/employees-list"  element = {<Employees/>} />
         <Route path = "/login" element = {<Login />} />
         <Route path = "/register" element = {<Register />} />
+        <Route path = "/article" element = {<Article />} />
       </Routes>
       <Footer />
     </div>
