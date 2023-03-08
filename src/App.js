@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 //import HomePage from "./Components/HomePage";
 //import EmployeePage from './Components/EmployeePage';
 //import Wrapper from './Components/Wrapper';
@@ -7,20 +7,20 @@ import './App.css';
 //import imageThree from "./assets/Images/Image_three.jpeg";
 //import React, {useState, useEffect} from "react";
 import Form from "./Components/Form";
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import Employees from './Components/Employees';
-import NavBar from './Components/NavBar';
-import Home from './Components/Home';
-import Register from './Components/Register';
-import Login from './Components/Login';
-import { EmployeeProvider}  from "./EmployeeContext"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Employees from "./Components/Employees";
+import NavBar from "./Components/NavBar";
+import Home from "./Components/Home";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
+import { EmployeeProvider } from "./EmployeeContext";
 //import EmployeeContext from "./EmployeeContext"
 //import {useState} from "react";
-import Footer from './Components/Footer';
-import Article from './Components/Article';
+import Footer from "./Components/Footer";
+import Article from "./Components/Article";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
-
-function App () { 
+function App() {
   /*const employees= [
     {
       id: 1,
@@ -51,7 +51,7 @@ function App () {
   },
 ];*/
 
-/*const [employees, setEmployees] = useState([]);
+  /*const [employees, setEmployees] = useState([]);
 
 
 useEffect(() => {
@@ -75,23 +75,44 @@ const [employeeDetail, setEmployeeDetail] = useState({
   emailAddress: "Email: JohnDoe@gmail.com",
 }) */
 
-
-return (
-  <EmployeeProvider>
-  <BrowserRouter>
-    <div className='container'>
-    <NavBar />
-     <Routes>
-       <Route path ="/website" element = {<Home />} />
-       <Route path = "/add-employees" element = {<Form />} />
-       <Route path = "/employees-list"  element = {<Employees/>} />
-        <Route path = "/login" element = {<Login />} />
-        <Route path = "/register" element = {<Register />} />
-        <Route path = "/article" element = {<Article />} />
-      </Routes>
-      <Footer />
-    </div>
-    </BrowserRouter>
+  return (
+    <EmployeeProvider>
+      <BrowserRouter>
+        <div className="container">
+          <NavBar />
+          <Routes>
+            <Route path="/website" element={<Home />} />
+            <Route
+              path="/add-employees"
+              element={
+                <ProtectedRoute>
+                  <Form />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/employees-list"
+              element={
+                <ProtectedRoute>
+                  <Employees />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route
+              path="/article"
+              element={
+                <ProtectedRoute>
+                  <Article />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="/log-out" element={<Home />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </EmployeeProvider>
   );
 }

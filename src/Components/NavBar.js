@@ -1,8 +1,20 @@
 //import { getByDisplayValue } from '@testing-library/react'
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import EmployeeContext from "../EmployeeContext";
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const { isAuthenticated, handleLogout } = useContext(EmployeeContext);
+  const navigate = useNavigate();
+  console.log(isAuthenticated);
+  const handleLogoutRedirect = () => {
+    handleLogout()
+    //reroute to the home page and do not show "the logout" button
+    navigate({
+      pathname: "/website",
+    });
+}
   return (
     <div>
       <ul
@@ -21,17 +33,25 @@ function NavBar() {
         }}
       >
         <li>
-          <Link to="/website"> Home </Link>{" "}
+          <Link to="/website">Home</Link>
         </li>
-        <li>
-          <Link to="/add-employees"> Add Employees</Link>
-        </li>
-        <li>
-          <Link to="/employees-list"> Employees List</Link>
-        </li>
-        <li>
-          <Link to="/article"> Article</Link>
-        </li>
+
+        {isAuthenticated && (
+          <>
+            <li>
+              <Link to="/add-employees"> Add Employees</Link>
+            </li>
+            <li>
+              <Link to="/employees-list"> Employees List</Link>
+            </li>
+            <li>
+              <Link to="/article"> Article</Link>
+            </li>
+            <li>
+            <Link onClick={handleLogoutRedirect} to="/log-out"> Log Out</Link>
+            </li> 
+          </>
+        )}
       </ul>
     </div>
   );

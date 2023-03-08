@@ -1,49 +1,105 @@
-import React from 'react'
-import {useState} from "react";
+import React from "react";
+import { useState, useContext } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router";
+import EmployeeContext from "../EmployeeContext";
 
-function Register () {
-    const [employeesData, setEmployeesData] = useState ({
-      name: "",
-      occupation: "",
-      mobileNumber: "",
-      emailAddress: "",
-      password: "",
-      username: "",
-  
-    })
-      const handleChange = (event) => {
-        const updatedUserData = {
-          ...employeesData, [event.target.name]: event.target.value,
-        };
-        setEmployeesData(updatedUserData);
-      }
-      function handleSubmit (event) {
-        event.preventDefault();
-        fetch("https://lit-dusk-21328.herokuapp.com/api/employees/addemployees", {
-          method: JSON.stringify(employeesData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-      }
-    return (
-      <div>
-      <div style = {{backgroundColor: "#BBDEFB", color: "black", marginTop: "50px", fontWeight: "bold"}}>Create Account</div>
-      <form style = {{backgroundColor: "#BBDEFB"}} onCreateAccount={handleSubmit}>
-      <input className="input" type ="text" name = "name" placeholder= "Name of the account holder" onChange = {handleChange} />
-      <br/>
-      <input className="input" type ="text" name = "occupation" placeholder= "Occupation" onChange = {handleChange} />
-      <br/>
-      <input className="input" type ="number" name = "mobileNumber" placeholder= "Mobile No." onChange = {handleChange} />
-      <br/>
-      <input className="input" type ="email" name = "emailAddress" placeholder= "Email Address" onChange = {handleChange} />
-      <br/>
-      <input className="input" type ="password" name = "password" placeholder= "strong password" onChange = {handleChange} />
-      <input className="input" type ="text" name = "username" placeholder= "user name" onChange = {handleChange} />
-      <button className="input" style= {{ backgroundColor: 'black', fontWeight: "bold", color: 'white'}}>Create Account</button>
-      </form>
-      </div>
-    )
+function Register() {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const {setIsAuthenticated, isAuthenticated } = useContext(EmployeeContext);
+  const navigate = useNavigate();
+  const userInfo = { userName, email, password };
+  const handleChange = (event) => {
+    setUserName(event.target.value);
+    setEmail(event.target.value);
+    setPassword(event.target.value);
   };
 
-export default Register
+  const baseUrl = "https://limitless-temple-21032.herokuapp.com/api/user";
+
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post(`${baseUrl}/signup`, userInfo);
+      console.log(response);
+
+      //taking the user to another page after he is registered
+      function protectedRoute ({children})   {
+      return ( isAuthenticated === true
+            ? children
+            : navigate({ pathname: "/login", replace: true }));
+            
+      }
+      console.log(protectedRoute);
+      
+  
+      /*isAuthenticated(true)
+      
+      navigate({
+        pathname: "/add-employees"
+      });
+            navigate({
+        pathname: "/employees-list"
+      });
+            navigate({
+        pathname: "/article"
+      });*/
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  return (
+    <div>
+      <div
+        style={{
+          backgroundColor: "#BBDEFB",
+          color: "black",
+          marginTop: "50px",
+          fontWeight: "bold",
+        }}
+      >
+        Create Account
+      </div>
+      <form style={{ backgroundColor: "#BBDEFB" }}>
+        <input
+          className="input"
+          type="text"
+          name="username"
+          placeholder="User Name"
+          onChange={handleChange}
+        />
+        <br />
+        <input
+          className="input"
+          type="email"
+          name="emailAddress"
+          placeholder="Email Address"
+          onChange={handleChange}
+        />
+        <br />
+        <input
+          className="input"
+          type="password"
+          name="password"
+          placeholder="strong password"
+          onChange={handleChange}
+        />
+        <button
+          className="input"
+          onClick={handleSignup}
+          style={{
+            backgroundColor: "black",
+            fontWeight: "bold",
+            color: "white",
+          }}
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default Register;
